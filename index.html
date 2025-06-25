@@ -60,6 +60,18 @@
     ul {
       padding-left: 20px;
     }
+    button {
+      padding: 8px 15px;
+      margin: 5px;
+      background-color: #2f4f4f;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #445;
+    }
   </style>
 </head>
 <body>
@@ -73,12 +85,24 @@
 
   <h2>🌍 Projektübersicht</h2>
   <p>
-Ländliche Gemeinden wie Doren stehen vor Herausforderungen wie Abwanderung, ungenutzten Gemeindeflächen und einer nur geringen Nutzung digitaler Verwaltungsangebote. Unser Projekt setzt genau hier an: Durch gezielte soziale Infrastruktur und digitale Services soll Remote Work strategisch gefördert werden. Ziel ist es, Doren zu einer lebenswerten, zukunftsorientierten Gemeinde weiterzuentwickeln.
-<br><br>
-Dabei analysieren wir, wie Welfare Services konkret zur Stärkung einer Remote-Work-Kultur beitragen können. Doren dient in diesem Zusammenhang als Modellregion für digitale Innovation im ländlichen Raum.
-</p>
+    Ländliche Gemeinden wie Doren stehen vor Herausforderungen wie Abwanderung, ungenutzten Gemeindeflächen und einer nur geringen Nutzung digitaler Verwaltungsangebote. Unser Projekt setzt genau hier an: Durch gezielte soziale Infrastruktur und digitale Services soll Remote Work strategisch gefördert werden. Ziel ist es, Doren zu einer lebenswerten, zukunftsorientierten Gemeinde weiterzuentwickeln.
+    <br><br>
+    Dabei analysieren wir, wie Welfare Services konkret zur Stärkung einer Remote-Work-Kultur beitragen können. Doren dient in diesem Zusammenhang als Modellregion für digitale Innovation im ländlichen Raum.
+  </p>
+
   <h2>📸 Unser Projektteam</h2>
   <img src="bilder/teamfoto.jpg" alt="Unser Projektteam">
+
+  <h2>🧭 Interaktive Dorfkarte – Doren 2030</h2>
+  <p>Bewege die Maus über die Symbole, um mehr zu erfahren:</p>
+  <img src="bilder/dorfkarte.jpg" usemap="#dorenmap" alt="Dorfkarte Doren" style="border-radius: 10px;">
+  <map name="dorenmap">
+    <area shape="circle" coords="100,150,25" href="#" title="KidsHub 24/7 – Flexible Kinderbetreuung für Berufstätige">
+    <area shape="circle" coords="220,220,25" href="#" title="Virtuelles Dorfzentrum – Treffpunkt für die Community">
+    <area shape="circle" coords="340,180,25" href="#" title="Community Siesta – Zeit für Austausch & Entspannung">
+    <area shape="circle" coords="180,300,25" href="#" title="Coworking im Grünen – Arbeiten mit Naturanschluss">
+    <area shape="circle" coords="280,100,25" href="#" title="Digitale Amtsservices – Bürgerbüro per App & ID Austria">
+  </map>
 
   <h2>🧩 Unsere Handlungsempfehlungen</h2>
   <ul>
@@ -94,6 +118,14 @@ Dabei analysieren wir, wie Welfare Services konkret zur Stärkung einer Remote-W
     <li>Regelmäßige Remote-Work-Sommerschule in Doren</li>
   </ul>
 
+  <h2>🗳️ Deine Meinung zählt!</h2>
+  <p>Welche unserer Empfehlungen findest du besonders wirkungsvoll?</p>
+  <button onclick="vote(0)">KidsHub 24/7</button>
+  <button onclick="vote(1)">Coworking im Grünen</button>
+  <button onclick="vote(2)">Virtuelles Dorfzentrum</button>
+  <button onclick="vote(3)">Community Siesta</button>
+  <p id="result" style="margin-top: 15px;"></p>
+
   <h2>📄 Projektarbeit (Download)</h2>
   <p>Hier kannst du unsere vollständige Projektarbeit herunterladen:</p>
   <a class="button" href="downloads/projektarbeit-doren.pdf" target="_blank">📄 PDF öffnen</a>
@@ -107,6 +139,15 @@ Dabei analysieren wir, wie Welfare Services konkret zur Stärkung einer Remote-W
 <footer>
   &copy; 2025 Projektteam Doren – FH Vorarlberg
 </footer>
+
+<script>
+  let votes = [0, 0, 0, 0];
+  function vote(index) {
+    votes[index]++;
+    document.getElementById("result").innerText =
+      `KidsHub: ${votes[0]} Stimmen\nCoworking: ${votes[1]} Stimmen\nDorfzentrum: ${votes[2]} Stimmen\nSiesta: ${votes[3]} Stimmen`;
+  }
+</script>
 
 </body>
 </html>
