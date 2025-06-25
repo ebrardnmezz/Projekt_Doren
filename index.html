@@ -96,64 +96,108 @@
   <h2>🗺️ Doren 2030 – Das digitale Dorf der Zukunft</h2>
 
 <style>
-  .map-container {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    max-width: 800px;
-    margin-bottom: 30px;
-  }
-  .map-container img {
-    width: 100%;
-    border-radius: 10px;
-  }
-  .popup {
-    position: absolute;
-    background-color: rgba(47, 79, 79, 0.9);
-    color: white;
-    padding: 10px;
-    border-radius: 8px;
-    font-size: 14px;
-    display: none;
-    z-index: 10;
-    max-width: 180px;
-  }
-  .hotspot {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    background-color: transparent;
-    cursor: pointer;
-  }
-  .hotspot:hover + .popup,
-  .hotspot:focus + .popup {
-    display: block;
-  }
-</style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      text-align: center;
+      padding: 30px;
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    .map-container {
+      position: relative;
+      display: inline-block;
+      max-width: 800px;
+      width: 100%;
+    }
+    .map-container img {
+      width: 100%;
+      border-radius: 12px;
+    }
+    .hotspot {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      background: transparent;
+    }
+    .tooltip {
+      position: absolute;
+      background: rgba(0, 0, 0, 0.85);
+      color: white;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 14px;
+      display: none;
+      z-index: 10;
+      max-width: 200px;
+    }
+  </style>
+</head>
+<body>
+
+<h2>🗺️ Interaktive Dorfkarte Doren 2025</h2>
 
 <div class="map-container">
-  <img src="Dorfkarte.png" alt="Interaktive Dorfkarte">
+  <img src="dorfkarte_interaktiv.png" alt="Dorfkarte">
 
-  <!-- Hotspot 1: KidsHub -->
-  <div class="hotspot" style="top: 10%; left: 5%;"></div>
-  <div class="popup" style="top: 12%; left: 7%;">👶 KidsHub 24/7<br>Flexible Kinderbetreuung für Berufstätige</div>
+  <!-- Hotspot 1 -->
+  <div class="hotspot" style="top: 10%; left: 8%;"
+       data-tooltip="👶 24/7 Kinderbetreuung – flexible Betreuungszeiten für Berufstätige"></div>
 
-  <!-- Hotspot 2: Community Siesta -->
-  <div class="hotspot" style="top: 65%; left: 30%;"></div>
-  <div class="popup" style="top: 68%; left: 32%;">🗣️ Community Siesta<br>Gemeinsame Entspannungszeit im Grünen</div>
+  <!-- Hotspot 2 -->
+  <div class="hotspot" style="top: 60%; left: 28%;"
+       data-tooltip="🗣️ Community Siesta – tägliche gemeinsame Pausen im Grünen"></div>
 
-  <!-- Hotspot 3: Digitales Amt -->
-  <div class="hotspot" style="top: 10%; left: 85%;"></div>
-  <div class="popup" style="top: 13%; left: 70%;">📱 ID Austria & eAmt<br>Digitale Amtswege im Alltag</div>
+  <!-- Hotspot 3 -->
+  <div class="hotspot" style="top: 12%; left: 82%;"
+       data-tooltip="📱 Digitales Amt – ID Austria & Services für Remote Work"></div>
 
-  <!-- Hotspot 4: Coworking -->
-  <div class="hotspot" style="top: 60%; left: 75%;"></div>
-  <div class="popup" style="top: 63%; left: 60%;">💻 Coworking im Grünen<br>Arbeiten in der Natur</div>
+  <!-- Hotspot 4 -->
+  <div class="hotspot" style="top: 58%; left: 72%;"
+       data-tooltip="💻 Coworking im Grünen – Pop-up Arbeitsplätze für alle"></div>
 
-  <!-- Hotspot 5: Remote Residency -->
-  <div class="hotspot" style="top: 30%; left: 40%;"></div>
-  <div class="popup" style="top: 33%; left: 45%;">🧑‍💻 Remote Residency Pass<br>Zugang & Services für neue Digitale</div>
+  <!-- Hotspot 5 -->
+  <div class="hotspot" style="top: 34%; left: 42%;"
+       data-tooltip="🧳 Remote Residency Pass – willkommen im digitalen Dorfzentrum"></div>
+
+  <div class="tooltip" id="tooltip"></div>
 </div>
+
+<script>
+  const hotspots = document.querySelectorAll('.hotspot');
+  const tooltip = document.getElementById('tooltip');
+
+  hotspots.forEach(hotspot => {
+    hotspot.addEventListener('mouseenter', e => {
+      tooltip.textContent = hotspot.getAttribute('data-tooltip');
+      tooltip.style.display = 'block';
+      tooltip.style.top = (hotspot.offsetTop + 40) + 'px';
+      tooltip.style.left = (hotspot.offsetLeft + 10) + 'px';
+    });
+
+    hotspot.addEventListener('mouseleave', () => {
+      tooltip.style.display = 'none';
+    });
+
+    // Touch support (für Handy)
+    hotspot.addEventListener('click', e => {
+      e.preventDefault();
+      tooltip.textContent = hotspot.getAttribute('data-tooltip');
+      tooltip.style.display = 'block';
+      tooltip.style.top = (hotspot.offsetTop + 40) + 'px';
+      tooltip.style.left = (hotspot.offsetLeft + 10) + 'px';
+    });
+  });
+
+  // Klick außerhalb blendet Tooltip aus
+  document.addEventListener('click', e => {
+    if (!e.target.classList.contains('hotspot')) {
+      tooltip.style.display = 'none';
+    }
+  });
+</script>
   
   <h2>🧩 Unsere Handlungsempfehlungen</h2>
 
