@@ -105,26 +105,150 @@
   </map>
 
   <h2>🧩 Unsere Handlungsempfehlungen</h2>
-  <ul>
-    <li>Einführung eines KidsHub 24/7 zur flexiblen Kinderbetreuung</li>
-    <li>Remote Residency Pass für digitale Zuzügler</li>
-    <li>Virtuelles Dorfzentrum für soziale Interaktion</li>
-    <li>Community Siesta zur Förderung der Dorfkultur</li>
-    <li>Digitale Amtsservices über ID Austria bewerben</li>
-    <li>Schaffung eines Coworking-Spaces im Grünen</li>
-    <li>Erweiterung der Gemeindekommunikation über App</li>
-    <li>Förderung digitaler Kompetenzen bei Älteren</li>
-    <li>Digitale Innovationssprechstunden mit Bürger:innen</li>
-    <li>Regelmäßige Remote-Work-Sommerschule in Doren</li>
-  </ul>
 
-  <h2>🗳️ Deine Meinung zählt!</h2>
-  <p>Welche unserer Empfehlungen findest du besonders wirkungsvoll?</p>
-  <button onclick="vote(0)">KidsHub 24/7</button>
-  <button onclick="vote(1)">Coworking im Grünen</button>
-  <button onclick="vote(2)">Virtuelles Dorfzentrum</button>
-  <button onclick="vote(3)">Community Siesta</button>
-  <p id="result" style="margin-top: 15px;"></p>
+<details>
+  <summary><strong>Flexible Betreuung und neue soziale Dienstleistungen</strong></summary>
+  <ul>
+    <li>24/7-Kinderbetreuung (Betreuungs-Slots)</li>
+    <li>Mobiler Pflege-Hub</li>
+    <li>Health-Tech-Lösung → Tele-Therapie-Kiosk</li>
+  </ul>
+</details>
+
+<details>
+  <summary><strong>Gemeinschaft und nachhaltige Mobilität</strong></summary>
+  <ul>
+    <li>„Remote-Buddy“-Programm</li>
+    <li>Mitfahr-App → „Green Commute“-Prinzip</li>
+    <li>Community-Kitchen-Projekt</li>
+  </ul>
+</details>
+
+<details>
+  <summary><strong>Experimentelle Infrastruktur und Räume</strong></summary>
+  <ul>
+    <li>Temporärer Pop-up-Coworking-Space</li>
+    <li>Micro-Rechenzentren (Edge-Server) installieren</li>
+  </ul>
+</details>
+
+<details>
+  <summary><strong>Förderung von Gemeinschaft und Vernetzung</strong></summary>
+  <ul>
+    <li>Remote Lunches</li>
+    <li>Stammtisch statt Kaffeeküche</li>
+    <li>Hybride Vereinsaktivitäten</li>
+  </ul>
+</details>
+
+<details>
+  <summary><strong>Familienfreundliche Rahmenbedingungen</strong></summary>
+  <ul>
+    <li>Stundenweise Eltern-Kind-Büro</li>
+    <li>Aufbau von Elternnetzwerken</li>
+    <li>„Betreuungs-Flatrate“ und/oder Gutscheine</li>
+  </ul>
+</details>
+
+<details>
+  <summary><strong>Informations- und Aufklärungskampagnen zu Remote Work</strong></summary>
+  <ul>
+    <li>Infoabende</li>
+    <li>Erfolgsgeschichten sichtbar machen</li>
+    <li>Kampagnen via Gemeindeblatt</li>
+  </ul>
+</details>
+
+<details>
+  <summary><strong>Vorbildfunktion der Gemeinde</strong></summary>
+  <ul>
+    <li>Homeoffice-Test für Gemeindebedienstete</li>
+    <li>Jobsharing über die Gemeindegrenzen</li>
+    <li>Remote-Work-Playground – „small place, big sandbox“</li>
+  </ul>
+</details>
+
+<details>
+  <summary><strong>Neue Governance- und Finanzierungsmodelle</strong></summary>
+  <ul>
+    <li>Zweckbindung eines Teils von Förderungen</li>
+    <li>RegLab (Aussetzen von strikten Widmungen)</li>
+    <li>Ausschreibung hybrider Teilzeit-Jobs</li>
+    <li>DAO → Bürger:innenentscheid</li>
+  </ul>
+</details>
+
+<details>
+  <summary><strong>Wirtschaftliche Anreize für Zuzug und Unternehmensgründung</strong></summary>
+  <ul>
+    <li>„Steuer-Hackathon“ – Zuzugsbonus</li>
+    <li>Digitale Gutscheine (lokale Geschäfte, Gastronomie)</li>
+    <li>Variable Kommunalsteuer → Steuermodell</li>
+    <li>„Pay-as-you-work Local Tax“</li>
+  </ul>
+</details>
+
+<details>
+  <summary><strong>Ausbau des Coworking-Angebots</strong></summary>
+  <ul>
+    <li>Coworking erweitern</li>
+    <li>Vermarkten eines regionalen Coworking-Hubs</li>
+  </ul>
+</details>
+
+<details>
+  <summary><strong>Stärkung digitaler Kompetenzen</strong></summary>
+  <ul>
+    <li>Regelmäßige Kurse und Workshops</li>
+    <li>Peer-Mentoring (z. B. Jugendliche)</li>
+    <li>Patenschaftsprogramm</li>
+  </ul>
+</details>
+
+<details>
+  <summary><strong>Erweiterung digitaler Verwaltungsangebote</strong></summary>
+  <ul>
+    <li>Zusätzliche Online-Beratung</li>
+    <li>Leitfäden und Videos verfügbar machen</li>
+    <li>Virtuelles Bürger:innen-Servicecenter</li>
+  </ul>
+</details>
+
+---
+
+<h2>🗳️ Welche Empfehlung findest du am besten?</h2>
+<p>Klick auf deinen Favoriten! (Stimmen zählen lokal im Browser)</p>
+
+<button onclick="vote(0)">24/7-Kinderbetreuung</button>
+<button onclick="vote(1)">Remote-Buddy-Programm</button>
+<button onclick="vote(2)">Community-Kitchen</button>
+<button onclick="vote(3)">Coworking erweitern</button>
+<button onclick="vote(4)">Digitale Gutscheine</button>
+<button onclick="vote(5)">Homeoffice-Test Gemeinde</button>
+<button onclick="vote(6)">Infoabende</button>
+<button onclick="vote(7)">Virtuelles Servicecenter</button>
+<button onclick="vote(8)">Peer-Mentoring</button>
+<button onclick="vote(9)">Remote-Work-Playground</button>
+
+<p id="result" style="margin-top: 15px;"></p>
+
+<script>
+let votes = Array(10).fill(0);
+function vote(index) {
+  votes[index]++;
+  document.getElementById("result").innerText =
+    `24/7-Kinderbetreuung: ${votes[0]} Stimmen\n` +
+    `Remote-Buddy: ${votes[1]} Stimmen\n` +
+    `Kitchen-Projekt: ${votes[2]} Stimmen\n` +
+    `Coworking: ${votes[3]} Stimmen\n` +
+    `Digitale Gutscheine: ${votes[4]} Stimmen\n` +
+    `Homeoffice-Test: ${votes[5]} Stimmen\n` +
+    `Infoabende: ${votes[6]} Stimmen\n` +
+    `Servicecenter: ${votes[7]} Stimmen\n` +
+    `Peer-Mentoring: ${votes[8]} Stimmen\n` +
+    `Playground: ${votes[9]} Stimmen`;
+}
+</script>
 
   <h2>📄 Projektarbeit (Download)</h2>
   <p>Hier kannst du unsere vollständige Projektarbeit herunterladen:</p>
